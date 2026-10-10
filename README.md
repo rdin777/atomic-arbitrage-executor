@@ -1,4 +1,7 @@
 markdown
+> 📖 **Read the full story:** [Why I Rejected a "Free" API and Built My Own MEV-Protected WebSocket Scanner](https://dev.to/rdin777/why-i-rejected-a-free-institutional-api-and-built-my-own-mev-protected-websocket-scanner-5gka)
+
+markdown
 # ⚡ Atomic Arbitrage Executor
 
 Real-time WebSocket scanner with MEV-protected arbitrage execution on Base L2.
