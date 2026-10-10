@@ -90,6 +90,37 @@ base-arbitrage-project — Smart contract + original bot
 Flashbots Protect — MEV protection docs
 Contributing
 Contributions welcome! Open an issue or PR.
+## 🧪 Community Testing & Contribution
+
+Due to network restrictions in some environments, I am inviting the community to help test and validate this scanner! If you have a stable connection to Base Mainnet RPCs, your tests would be incredibly valuable.
+
+### How to Test Locally
+
+1. **Clone & Install**:
+   ```bash
+   git clone https://github.com/rdin777/atomic-arbitrage-executor.git
+   cd atomic-arbitrage-executor
+   npm install
+2 Configure Environment:
+   cp .env.example .env
+Open .env and fill in the details:
+WS_RPC_URL: Get a free WebSocket URL from Alchemy or QuickNode for Base Mainnet.
+PRIVATE_KEY: Use a dedicated test wallet with a small amount of Base ETH (e.g., 0.01 ETH) for gas. Never use your main wallet!
+CONTRACT_ADDRESS: The address of the deployed ArbitrageExecutor contract (you can use the one from base-arbitrage-project or deploy your own).
+UNISWAP_POOL & AERODROME_POOL: Find active WETH/USDC (or other pair) pool addresses on Uniswap Info (Base) and Aerodrome Finance.
+TOKEN_A & TOKEN_B: Addresses of the tokens you are arbitraging (e.g., WETH and USDC).
+3 Run the Scanner:
+   npm run dev
+The bot will connect via WebSocket and start listening for Swap events. If a spread > MIN_PROFIT is detected, it will attempt to execute via Flashbots Protect.
+⚠️ Security Reminder
+NEVER commit your .env file or share your PRIVATE_KEY.
+The .gitignore is configured to prevent this, but always double-check before pushing any changes.
+🤝 How to Contribute
+Found a bug or a better pool pair with higher volatility?
+Have an idea to improve the spread calculation logic?
+Open an Issue or submit a Pull Request! All constructive feedback is welcome.
+
+
 📄 License
 MIT
 
